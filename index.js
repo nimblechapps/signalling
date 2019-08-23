@@ -23,7 +23,7 @@ io.sockets.on('connection', function(socket) {
   socket.on('message', function(message) {
     log('Client said: ', message);
     // for a real app, would be room-only (not broadcast)
-    socket.to("room123").emit('message', message);
+    socket.to(message.roomName).emit('message', message);
     //socket.broadcast.emit('message', message);
   });
 
